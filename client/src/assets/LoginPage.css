@@ -1,0 +1,104 @@
+/* Reset and basic setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #556991, #2d3f73); /* light to dark blue */
+    background-size: cover;
+    overflow: hidden;
+  }
+  
+  /* Container taking full screen */
+  .role-container {
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 40px;
+    flex-wrap: wrap;
+  }
+  
+  /* Role boxes */
+  .role-box {
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 400px;
+    padding: 40px 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    color: #333;
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer; /* makes it look clickable */
+    animation: fadeInUp 0.8s ease both;
+  }
+  
+  .role-box:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+  
+  .role-box:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+  
+  .role-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #3f51b5;
+    transition: transform 0.3s ease;
+  }
+  
+  .role-box h2 {
+    font-size: 26px;
+    margin-bottom: 12px;
+  }
+  
+  .role-box p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+  }
+  
+  /* Hover effect */
+  .role-box:hover {
+    transform: scale(1.07);
+    background-color: #ffffff;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  }
+  
+  .role-box:hover .role-icon {
+    transform: rotate(5deg) scale(1.2);
+  }
+  
+  /* Entry animation */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive layout */
+  @media (max-width: 768px) {
+    .role-container {
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px;
+    }
+  
+    .role-box {
+      width: 90%;
+    }
+  }
+  
